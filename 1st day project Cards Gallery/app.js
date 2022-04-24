@@ -1,4 +1,4 @@
-function slidesPlugin(activeSlide = 0){
+function slidesPlugin(activeSlide = 4){
 const slides = document.querySelectorAll('.slide')
 
 slides[activeSlide].classList.add('active')
@@ -19,4 +19,4 @@ function clearActiveSlides() {
     })
 }
 }
-slidesPlugin(0)
+slidesPlugin(4)
