@@ -64,9 +64,13 @@ body {
 }
 
 .hold{
-  border: 3px solid #eee;
+  border: 3px solid  rgb(143, 211, 244, 0.8)
 }
 
 .hide{
   display: none;
+}
+
+.hovered{
+  border-top: 1.8px solid rgb(142, 215, 237, 0.8);
 }
