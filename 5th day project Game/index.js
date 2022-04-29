@@ -5,6 +5,7 @@ const timeEl = document.querySelector('#time')
 const board = document.querySelector('#board')
 let time = 0
 let score = 0
+const colours = ['#3914AF', '#7109AA', '#7109AA', '#FFD300', '#1240AB', '#9F3ED5', '#48036F','#200772','#A68900']
 
 startBtn.addEventListener('click',(event)=>{
 
@@ -69,6 +70,9 @@ function createRandomCircles() {
     const {width,height} = board.getBoundingClientRect() // const {width,height} - деструктуризация
     const x = getRandomNumber(0, width-size)
     const y = getRandomNumber(0, height-size)
+    const colour = addRandomColour()
+    const index = Math.floor(Math.random() * colours.length)
+
 
     circle.classList.add('circle')
     circle.style.width = `${size}px`
@@ -76,10 +80,23 @@ function createRandomCircles() {
     circle.style.top = `${y}px`
     circle.style.left = `${x}px`
 
+    circle.style.backgroundColor = colour
+
     board.append(circle);
+     return colours[index]
 }
 
 //создаем функцию для того, чтобы образовывались рандомные по размеру круги
 function getRandomNumber(min, max) {
     return Math.round(Math.random() * (max - min) + min)
+}
+
+
+function setColour(element) {
+    const colour = addRandomColour()
+    element.style.backgroundColor = colour
+}
+function addRandomColour(element) {
+    const index = Math.floor(Math.random() * colours.length)
+    return colours[index]
 }
